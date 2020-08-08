@@ -1,4 +1,4 @@
-const token = 'SeuTokenDoBot';
+const token = 'YourTokenBot';
 
 module.exports = {
     token(){
