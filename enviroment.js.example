@@ -1,0 +1,7 @@
+const token = 'SeuTokenDoBot';
+
+module.exports = {
+    token(){
+        return token;
+    },
+}
