@@ -93,4 +93,17 @@ bot.onText(/\/listmedicines/, async (msg) => {
 
     bot.sendMessage(chatId,med);  
 });
+
+setInterval(async () => {
+    const medicine = (await connection('medicines').where('user_id', 1).select('id','medicine','amount'));
+    medicine.forEach(async el =>{
+        await connection('medicines').where('id',el.id).decrement('amount',1);
+    });
+    let med = `Lista de medicamentos:\n---------------------------------------\n`;
+    medicine.forEach(el => {
+        med += `Medicamento:        ${el.medicine}\nQuantidade:           ${el.amount -1}\n---------------------------------------\n`
+    });
+    bot.sendMessage(382169135,med);  
+},86400000);
+
 app.listen(3333);
