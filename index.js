@@ -103,7 +103,7 @@ setInterval(async () => {
     medicine.forEach(el => {
         med += `Medicamento:        ${el.medicine}\nQuantidade:           ${el.amount -1}\n---------------------------------------\n`
     });
-    bot.sendMessage(382169135,med);  
+    bot.sendMessage(enviroment.userIdTelegram(),med);  
 },86400000);
 
 app.listen(3333);
