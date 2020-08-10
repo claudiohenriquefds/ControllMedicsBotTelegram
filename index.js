@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const telegramBot = require('node-telegram-bot-api');
-const enviroment = require('./enviroment');
 const connection = require('./src/database/connection.js');
+const dotenv = require('dotenv');
 
-const bot = new telegramBot (enviroment.token(), {polling: true});
+dotenv.config();
+
+const bot = new telegramBot (process.env.BOT_TOKEN, {polling: true});
 
 bot.onText(/\/start/, async msg => {
     const user_id = msg.chat.id;
@@ -103,7 +105,7 @@ setInterval(async () => {
     medicine.forEach(el => {
         med += `Medicamento:        ${el.medicine}\nQuantidade:           ${el.amount -1}\n---------------------------------------\n`
     });
-    bot.sendMessage(enviroment.userIdTelegram(),med);  
+    bot.sendMessage(process.env.USER_ID_TELEGRAM,med);  
 },86400000);
 
 app.listen(3333);
