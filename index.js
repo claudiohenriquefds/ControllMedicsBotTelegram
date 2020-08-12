@@ -1,6 +1,8 @@
 const telegramBot = require('node-telegram-bot-api');
 const connection = require('./src/database/connection.js');
 const dotenv = require('dotenv');
+const express = require('express');
+const app = express();
 
 dotenv.config();
 
@@ -105,3 +107,5 @@ bot.onText(/\/listmedicines/, async (msg) => {
 //     });
 //     bot.sendMessage(process.env.USER_ID_TELEGRAM,med);  
 // },86400000);
+
+app.listen(process.env.PORT || 3333);
