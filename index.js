@@ -1,5 +1,5 @@
-// const telegramBot = require('node-telegram-bot-api');
-// const connection = require('./src/database/connection.js');
+const telegramBot = require('node-telegram-bot-api');
+const connection = require('./src/database/connection.js');
 const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
