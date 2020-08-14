@@ -1,8 +1,9 @@
-const telegramBot = require('node-telegram-bot-api');
-const connection = require('./src/database/connection.js');
+// const telegramBot = require('node-telegram-bot-api');
+// const connection = require('./src/database/connection.js');
 const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
+const axios = require('axios');
 
 dotenv.config();
 
@@ -96,6 +97,11 @@ bot.onText(/\/listmedicines/, async (msg) => {
     bot.sendMessage(chatId,med);  
 });
 
+setInterval(() => {
+    axios.get('http://controllmedicbottelegram.herokuapp.com').then((response) => {
+        console.log(response);
+    });
+},1500000);
 setInterval(async () => {
     const medicine = (await connection('medicines').where('user_id', 1).select('id','medicine','amount'));
     medicine.forEach(async el =>{
