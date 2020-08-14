@@ -108,4 +108,8 @@ setInterval(async () => {
     bot.sendMessage(process.env.USER_ID_TELEGRAM,med);  
 },86400000);
 
+app.get ('/', (req, res) => {
+    return res.send ('Olá, esse é a api do ControllMedicsBotTelegram');
+});
+
 app.listen(process.env.PORT || 3333);
