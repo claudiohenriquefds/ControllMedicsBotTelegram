@@ -98,17 +98,13 @@ bot.onText(/\/listmedicines/, async (msg) => {
     bot.sendMessage(chatId,med);  
 });
 
-
-// setInterval(() => {
-//     axios.get('http://controllmedicbottelegram.herokuapp.com').then((response) => {
-//         console.log(response);
-//     });
-// },1500000);
-
-var j = schedule.scheduleJob("5 * * * * *", () => {
-    bot.sendMessage(process.env.USER_ID_TELEGRAM,'Test');  
+var j = schedule.scheduleJob("25 * * * *", () => {
+    axios.get('http://controllmedicbottelegram.herokuapp.com').then((response) => {
+        console.log(response);
+    });
 });
-setInterval(async () => {
+
+var x = schedule.scheduleJob("23 * * *", async () => {
     const medicine = (await connection('medicines').where('user_id', 1).select('id','medicine','amount'));
     medicine.forEach(async el =>{
         await connection('medicines').where('id',el.id).decrement('amount',1);
@@ -117,9 +113,8 @@ setInterval(async () => {
     medicine.forEach(el => {
         med += `Medicamento:        ${el.medicine}\nQuantidade:           ${el.amount -1}\n---------------------------------------\n`
     });
-    bot.sendMessage(process.env.USER_ID_TELEGRAM,med);  
-},86400000);
-
+    bot.sendMessage(process.env.USER_ID_TELEGRAM,med);
+});
 app.get ('/', (req, res) => {
     return res.send ('Olá, esse é a api do ControllMedicsBotTelegram');
 });
