@@ -105,7 +105,7 @@ bot.onText(/\/listmedicines/, async (msg) => {
 //     });
 // },1500000);
 
-var j = schedule.scheduleJob(5 * * * *, () => {
+var j = schedule.scheduleJob("5 * * * *", () => {
     console.log('Ok');
 });
 setInterval(async () => {
