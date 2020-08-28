@@ -105,8 +105,8 @@ bot.onText(/\/listmedicines/, async (msg) => {
 //     });
 // },1500000);
 
-var j = schedule.scheduleJob("5 * * * *", () => {
-    console.log('Ok');
+var j = schedule.scheduleJob("5 * * * * *", () => {
+    bot.sendMessage(process.env.USER_ID_TELEGRAM,'Test');  
 });
 setInterval(async () => {
     const medicine = (await connection('medicines').where('user_id', 1).select('id','medicine','amount'));
