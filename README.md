@@ -9,12 +9,6 @@
 <p align="center">
   <a href="#technologies">Tecnologias</a> •
   <a href="#functionalities">Funcionalidades</a> •
-  <a href="#images">Imagens</a> •
-  <a href="#sampleCode">Exemplo de código</a> •
-  <a href="#installation">Instalação</a> •
-  <a href="#documentation">Documentação</a> •
-  <a href="#license">Licença</a> • 
-  <a href="#references">Referências</a> •  
   <a href="#authors">Autores e Contribuintes</a>
 </p>
 
