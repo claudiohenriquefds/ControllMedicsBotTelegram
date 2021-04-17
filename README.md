@@ -2,8 +2,8 @@
 
 <p align="justify">O ControllMedicsBotTelegram é um bot feito em javascript, para gerencia de medicamentos na plataforma do telegram.</p>
 
-![REPO SIZE](https://img.shields.io/github/repo-size/USUARIO/NOMEDOREPO?color=0D1117&label=Repo%20Size&style=flat-square&labelColor=0D1117)
-![LAST COMMIT](https://img.shields.io/github/last-commit/USUARIO/NOMEDOREPO?color=0D1117&label=Last%20Commit&style=flat-square&labelColor=0D1117)
+![REPO SIZE](https://img.shields.io/github/repo-size/claudiohenriquefds/controllmedicsbottelegram?color=0D1117&label=Repo%20Size&style=flat-square&labelColor=0D1117)
+![LAST COMMIT](https://img.shields.io/github/last-commit/claudiohenriquefds/controllmedicsbottelegram?color=0D1117&label=Last%20Commit&style=flat-square&labelColor=0D1117)
 ![STATUS](https://img.shields.io/badge/Done-0D1117?style=flat-square&label=Status&Color=white&labelColor=0D1117)
 
 <p align="center">
